@@ -1,0 +1,16 @@
+[package]
+name = "ising-program"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+sp1-zkvm = "5.2.4"
+ising-lib = { workspace = true }
+alloy-sol-types = { workspace = true }
+
+[profile.release]
+# 针对 zkVM 的性能优化设置
+lto = true
+panic = 'abort'
+opt-level = 3
+

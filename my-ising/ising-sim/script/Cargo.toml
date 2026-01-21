@@ -1,0 +1,28 @@
+[package]
+name = "ising-script"
+version = "0.1.0"
+edition = "2021"
+# 这里的名字要与下方 [[bin]] 的 name 对应
+default-run = "ising-sim" 
+
+[[bin]]
+name = "ising-sim"
+path = "src/bin/main.rs"  
+
+[dependencies]
+# 核心 SDK
+sp1-sdk = "5.2.4" 
+# 序列化支持
+serde_json = { version = "1.0", default-features = false, features = ["alloc"] }
+serde = { version = "1.0.200", default-features = false, features = ["derive"] }
+# 命令行工具与日志
+clap = { version = "4.0", features = ["derive", "env"] }
+tracing = "0.1.40"
+hex = "0.4.3"
+# 从根目录 Workspace 继承的依赖
+alloy-sol-types = { workspace = true }
+ising-lib = { workspace = true } 
+dotenv = "0.15.0"
+
+[build-dependencies]
+sp1-build = "5.2.4"

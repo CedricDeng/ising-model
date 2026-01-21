@@ -1,0 +1,16 @@
+[workspace]
+members = [
+    "lib",
+    "program",
+    "script",
+]
+resolver = "2"
+
+[workspace.dependencies]
+ising-lib = { path = "./lib" } 
+alloy-sol-types = "1.5.2" 
+
+[profile.release]
+lto = true
+panic = 'abort'
+opt-level = 3

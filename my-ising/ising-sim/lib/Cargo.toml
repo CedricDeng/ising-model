@@ -1,0 +1,10 @@
+[package]
+name = "ising-lib" # 确保名字与你代码中引用的一致
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# 用于生成与 Solidity 兼容的 ABI 编码
+alloy-sol-types = "1.5.2" 
+# 物理模拟参数的序列化支持
+serde = { version = "1.0", features = ["derive"] }
